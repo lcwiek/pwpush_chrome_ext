@@ -63,6 +63,8 @@ The extension requires the following permissions:
 2. Right-click and choose **"Send to PWPush."**  
 3. The generated link is copied to your clipboard.  
 
+![instructions](instructions.png)
+
 ## 📂 Project Files & Structure
 
  │── icons/* # Extension icons 
