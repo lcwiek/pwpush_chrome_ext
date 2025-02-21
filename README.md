@@ -1,5 +1,7 @@
 # CLSS PWPush Extension
 
+![Logo](icons/pwpush-128.png)
+
 ## Overview
 The **CLSS PWPush Extension** allows you to quickly send selected text or a custom message to PWPush and generate a secure, self-destructing link. The extension also copies the generated link directly to your clipboard.
 
@@ -63,13 +65,13 @@ The extension requires the following permissions:
 
 ## 📂 Project Files & Structure
 
-│── manifest.json # Chrome extension manifest 
-│── popup.html # Popup interface 
-│── popup.js # Popup logic and interactions 
-│── options.html # Extension settings page 
-│── options.js # Handles settings storage and retrieval 
-│── background.js # Background script for context menu and API communication 
-│── icons/ # Extension icons 
+ │── icons/* # Extension icons 
+ │── manifest.json # Chrome extension manifest 
+ │── popup.html # Popup interface 
+ │── popup.js # Popup logic and interactions 
+ │── options.html # Extension settings page 
+ │── options.js # Handles settings storage and retrieval 
+ │── background.js # Background script for context menu and API communication 
 
 ## 📂 GitHub Repository
 The source code for this extension is available on GitHub.

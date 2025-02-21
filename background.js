@@ -68,7 +68,7 @@ async function sendToPWPush(data, sendResponse, tab) {
 
         chrome.notifications.create({
             type: "basic",
-            iconUrl: "icons/logo3-144x144_t.png",
+            iconUrl: "icons/pwpush-128.png",
             title: "PWPush",
             message: "PWPush link copied to clipboard!"
         });
@@ -80,7 +80,7 @@ async function sendToPWPush(data, sendResponse, tab) {
 
         chrome.notifications.create({
             type: 'basic',
-            iconUrl: 'icons/logo3-144x144_t.png',
+            iconUrl: 'icons/pwpush-128.png',
             title: 'PWPush Error',
             message: 'Failed to generate PWPush link.'
         });

@@ -22,8 +22,8 @@
     "open_in_tab": false
   },
   "icons": {
-    "19": "icons/logo3-144x144_t.png",
-    "38": "icons/logo3-144x144_t.png",
-    "128": "icons/logo3-144x144_t.png"
+    "19": "icons/pwpush-19.png",
+    "38": "icons/pwpush-38.png",
+    "128": "icons/pwpush-128.png"
   }
 }
