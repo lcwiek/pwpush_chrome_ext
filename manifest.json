@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "CLSS PWPush Extension",
+  "version": "1.0",
+  "description": "Transmit the selected text to PWPush and automatically copy the generated link to the clipboard.",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "notifications",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"  
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+    "19": "icons/logo3-144x144_t.png",
+    "38": "icons/logo3-144x144_t.png",
+    "128": "icons/logo3-144x144_t.png"
+  }
+}

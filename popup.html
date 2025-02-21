@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWPush - Home</title>
+    <style>
+        * {box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif;}
+        body {width: 320px; background: #f4f4f4; padding: 15px; text-align: center;}
+        .header {display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px;}
+        .header img {width: 40px; height: 40px;}
+        h2 {font-size: 18px; color: #333;}
+        .container {background: white; padding: 15px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);}
+        .setting {display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;}
+        .setting input, .setting select {flex: 2; width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 12px;}
+        .setting label {flex: 1; font-size: 12px; color: #333;}
+        button {width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; font-size: 12px; cursor: pointer; transition: background 0.3s; margin-top: 10px;}
+        button:hover {background: #0056b3;}
+        #toggleOptionalButton {margin-top: 10px; background: #6c757d;}
+        #optionalSettings {margin-top: 15px;}
+        .setting.centered-setting {margin-bottom: 10px;}
+        #toggleOptionalButton:hover {background: #5a6268;}
+        .hidden {display: none;}
+        .message {color: #28a745; font-size: 12px; margin-top: 10px; visibility: hidden; transition: opacity 0.5s;}
+        .support-footer {margin-top: 15px; font-size: 12px; color: #777;}
+        .support-footer a {color: #007bff; text-decoration: none;}
+        .support-footer a:hover {text-decoration: underline;}
+        .support-footer p { margin-bottom: 5px; }
+        .checkbox-setting {display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin-bottom: 8px;}
+        .checkbox-setting input {margin: 0;}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="icons/logo3-144x144_t.png" alt="PWPush Icon">
+        <h2>CLSS PWPush Share</h2>
+    </div>
+
+    <div class="container">
+        <div class="setting">
+            <input type="text" id="textInput" placeholder="Enter your text or URL here..." />
+        </div>
+
+        <div>
+            <p id="message" class="message">PWPush link copied to clipboard!</p>
+        </div>
+
+        <div>
+            <button id="submitText">Generate PWPush Link</button>
+        </div>
+        
+        <div>
+            <button id="toggleOptionalButton">Show Optional Settings</button>
+        </div>
+
+        <div id="optionalSettings" class="hidden">
+            <!-- <div class="setting centered-setting">
+                <label for="kind">Kind of Push:</label>
+                <select id="kind">
+                    <option value="text">Text</option>
+                    <option value="url">URL</option>
+                </select>
+            </div> -->
+
+            <div class="setting">
+                <label for="daysValue">Expiration Time (days):</label>
+                <input type="number" id="expireDays" min="1">
+            </div>
+            
+            <div class="setting">
+                <label for="viewsValue">Max Views:</label>
+                <input type="number" id="maxViews" min="1">
+            </div>            
+
+            <div class="setting centered-setting">
+                <input type="password" id="passphraseInput" placeholder="Optional: Enter passphrase" />
+            </div>
+            <div class="setting centered-setting">
+                <input type="note" id="noteInput" placeholder="Optional: Enter note" />
+            </div>
+            <div class="checkbox-setting">
+                <input type="checkbox" id="oneStepCheckbox">
+                <label for="oneStepCheckbox">One-step link</label>
+            </div>
+            <div class="checkbox-setting">
+                <input type="checkbox" id="deletableCheckbox">
+                <label for="deletableCheckbox">Deletable by viewer</label>
+            </div>
+            
+        </div>
+
+        <div>
+            <button id="openSettings">Ustawienia</button>
+        </div>
+    </div>
+
+    <footer class="support-footer">    
+        <p><a href="instructions.html" target="_blank">User Guide</a></p>
+        <p><a id="serverLink" href="https://pwpush.clss.pl/" target="_blank">pwpush.clss.pl</a> | <a href="https://www.clss.pl/" target="_blank">//coding.lifestyle Studio</a></p>
+    </footer>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

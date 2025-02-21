@@ -1,93 +1,85 @@
-# pwpush_chrome_ext
+# CLSS PWPush Extension
 
+## Overview
+The **CLSS PWPush Extension** allows you to quickly send selected text or a custom message to PWPush and generate a secure, self-destructing link. The extension also copies the generated link directly to your clipboard.
 
-
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://git.clss.pl/codinglifestyle/chrome-extension/pwpush_chrome_ext.git
-git branch -M develop
-git push -uf origin develop
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://git.clss.pl/codinglifestyle/chrome-extension/pwpush_chrome_ext/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## Features
+✔️ Send text or selected content to PWPush  
+✔️ Generate an encrypted, self-destructing link  
+✔️ Copy generated links automatically to clipboard  
+✔️ Customize expiration time, max views, and security settings  
+✔️ Integrated with the browser's right-click context menu  
+✔️ Simple UI with an optional settings panel  
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+👉 [**Chrome Web Store**](https://chrome.google.com/webstore/detail/your-extension-id)
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Or manually:
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+1. Download and extract the extension files.
+2. Open Chrome and go to `chrome://extensions/`.
+3. Enable **Developer Mode** (top right corner).
+4. Click **"Load unpacked"** and select the extracted folder.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## ⚙️ Settings & Configuration
+The extension allows customization via the **Settings Page**:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+- **Server URL & API Token** – Set a custom PWPush server and authentication token.
+- **Expiration Time (Days)** – Define how long the generated link remains active.
+- **Max Views** – Limit the number of times the link can be accessed.
+- **One-step Link** – Enable or disable one-step retrieval for passwords.
+- **Deletable by Viewer** – Allow or prevent users from deleting the link.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### **How to Access Settings**
+1. Click the **extension icon** in Chrome.
+2. Open **"Settings"** from the popup.
+3. Adjust preferences and **Save** your settings.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Alternatively, you can go to:  
+📌 `chrome://extensions/` → Click **"Details"** → **"Extension Options"**
 
-## License
-For open source projects, say how it is licensed.
+## 🛠️ Permissions
+The extension requires the following permissions:
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- **storage** – To save user settings.  
+- **contextMenus** – To add the "Send to PWPush" right-click option.  
+- **activeTab** – To execute scripts on the current tab.  
+- **scripting** – To interact with the clipboard.  
+- **notifications** – To display notifications after generating links.  
+- **clipboardWrite** – To copy generated links directly to the clipboard.  
+
+## 🖥️ How to Use
+### **Option 1: Using the Extension Popup**
+1. Click on the **extension icon** in Chrome.  
+2. Enter text or a URL into the input box.  
+3. (Optional) Adjust security settings via "Show Optional Settings."  
+4. Click **"Generate PWPush Link"** – the link will be copied automatically.  
+
+### **Option 2: Using the Right-Click Context Menu**
+1. Select any text on a webpage.  
+2. Right-click and choose **"Send to PWPush."**  
+3. The generated link is copied to your clipboard.  
+
+## 📂 Project Files & Structure
+
+│── manifest.json # Chrome extension manifest 
+│── popup.html # Popup interface 
+│── popup.js # Popup logic and interactions 
+│── options.html # Extension settings page 
+│── options.js # Handles settings storage and retrieval 
+│── background.js # Background script for context menu and API communication 
+│── icons/ # Extension icons 
+
+## 📂 GitHub Repository
+The source code for this extension is available on GitHub.
+
+👉 [View on GitHub](https://github.com/your-username/your-repository)
+
+## 📜 License
+This project is licensed under the **MIT License**.  
+You are free to use, modify, and distribute the code under the terms of this license.  
+
+## 👨‍💻 **Extension Developer**  
+Created by **//coding.lifestyle Studio**  
+🌐 [Website](https://www.clss.pl/)
