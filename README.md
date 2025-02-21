@@ -74,7 +74,7 @@ The extension requires the following permissions:
 ## 📂 GitHub Repository
 The source code for this extension is available on GitHub.
 
-👉 [View on GitHub](https://github.com/your-username/your-repository)
+👉 [View on GitHub](https://github.com/lcwiek/pwpush_chrome_ext)
 
 ## 📜 License
 This project is licensed under the **MIT License**.  
