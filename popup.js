@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Nasłuchiwanie wiadomości z background.js, aby skopiować link do schowka
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === "copyToClipboard" && request.url) {
             navigator.clipboard.writeText(request.url).then(() => {
