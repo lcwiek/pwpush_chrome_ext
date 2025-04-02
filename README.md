@@ -71,12 +71,12 @@ The extension requires the following permissions:
 
 ## 📂 Project Files & Structure
 
- │── icons/* # Extension icons 
- │── manifest.json # Chrome extension manifest 
- │── popup.html # Popup interface 
- │── popup.js # Popup logic and interactions 
- │── options.html # Extension settings page 
- │── options.js # Handles settings storage and retrieval 
+ │── icons/* # Extension icons  
+ │── manifest.json # Chrome extension manifest  
+ │── popup.html # Popup interface  
+ │── popup.js # Popup logic and interactions  
+ │── options.html # Extension settings page  
+ │── options.js # Handles settings storage and retrieval  
  │── background.js # Background script for context menu and API communication 
 
 ## 📂 GitHub Repository
