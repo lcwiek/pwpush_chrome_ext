@@ -15,7 +15,7 @@ The **CLSS PWPush Extension** allows you to quickly send selected text or a cust
 
 ## Installation
 
-👉 [**Chrome Web Store**](https://chrome.google.com/webstore/detail/your-extension-id)
+👉 [**Chrome Web Store**](https://chrome.google.com/webstore/detail/dciachecedmmaimbjhdbaijdopbfjebf)
 
 Or manually:
 
@@ -41,6 +41,8 @@ The extension allows customization via the **Settings Page**:
 Alternatively, you can go to:  
 📌 `chrome://extensions/` → Click **"Details"** → **"Extension Options"**
 
+![instructions3](instructions3.png)
+
 ## 🛠️ Permissions
 The extension requires the following permissions:
 
@@ -56,7 +58,9 @@ The extension requires the following permissions:
 1. Click on the **extension icon** in Chrome.  
 2. Enter text or a URL into the input box.  
 3. (Optional) Adjust security settings via "Show Optional Settings."  
-4. Click **"Generate PWPush Link"** – the link will be copied automatically.  
+4. Click **"Generate PWPush Link"** – the link will be copied automatically. 
+ 
+![instructions2](instructions2.png)
 
 ### **Option 2: Using the Right-Click Context Menu**
 1. Select any text on a webpage.  
