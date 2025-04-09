@@ -1,3 +1,5 @@
+## 1.0.1-rc1
+- fix serverUrl parsing to remove protocol and path
 ## 1.0.0-rc4
 - updated instrucions
 ## 1.0.0-rc3
