@@ -12,7 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
         status.textContent = message;
         status.style.color = color;
     }
-
+    
+    function cleanServerUrl(input) {
+        try {
+            const url = new URL(input.includes('://') ? input : 'https://' + input);
+            return url.hostname;
+        } catch (e) {
+            return '';
+        }
+    }
+    
     chrome.storage.sync.get({
         serverUrl: "pwpush.com",
         daysValue: 14,
@@ -39,8 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     saveButton.addEventListener("click", function () {
+
         chrome.storage.sync.set({
-            serverUrl: serverUrl.value,
+            serverUrl: cleanServerUrl(serverUrl.value),
             daysValue: parseInt(daysValue.value, 10),
             viewsValue: parseInt(viewsValue.value, 10),
             oneStepValue: oneStep.checked,

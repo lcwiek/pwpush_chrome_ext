@@ -1,4 +1,14 @@
 async function sendToPWPush(data, sendResponse, tab) {
+
+    function cleanServerUrl(input) {
+        try {
+            const url = new URL(input.includes('://') ? input : 'https://' + input);
+            return url.hostname;
+        } catch (e) {
+            return '';
+        }
+    }
+
     try {
         const syncSettings = await new Promise((resolve) => {
             chrome.storage.sync.get({
@@ -14,7 +24,8 @@ async function sendToPWPush(data, sendResponse, tab) {
             chrome.storage.local.get("serverToken", resolve);
         });
 
-        const apiUrl = `https://${syncSettings.serverUrl}/p.json`;
+        const normalizedUrl = cleanServerUrl(syncSettings.serverUrl);
+        const apiUrl = `https://${normalizedUrl}/p.json`;
         const serverToken = localSettings.serverToken || "";
 
         const urlencoded = new URLSearchParams();
@@ -42,7 +53,7 @@ async function sendToPWPush(data, sendResponse, tab) {
 
         const result = await response.json();
 
-        const pwpushUrl = `https://${syncSettings.serverUrl}/p/${result.url_token}${(data.oneStepValue !== undefined ? data.oneStepValue : syncSettings.oneStepValue) ? "/r" : ""}`;
+        const pwpushUrl = `https://${normalizedUrl}/p/${result.url_token}${(data.oneStepValue !== undefined ? data.oneStepValue : syncSettings.oneStepValue) ? "/r" : ""}`;
 
         console.log("Generated PWPush URL:", pwpushUrl);
 
