@@ -1,0 +1,50 @@
+stages:
+- lint
+- test
+- build
+- tag
+
+variables:
+  ZIP_OUTPUT: dist/clss-pwpush-extension.zip
+  BUILD_DIR: dist
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Secret-Detection.gitlab-ci.yml
+
+lint:
+  stage: lint
+  image: registry.git.clss.pl/registry/proxy/node:18
+  script:
+  - npm install --no-save eslint
+  - npx eslint *.js --fix
+  artifacts:
+    paths:
+    - "*.js"
+    expire_in: 1h
+
+build_zip:
+  stage: build
+  image: registry.git.clss.pl/registry/proxy/alpine:latest
+  before_script:
+  - apk add zip
+  script:
+  - mkdir -p $BUILD_DIR
+  - zip -r $ZIP_OUTPUT . -x "*.git*" "*.gitlab-ci.yml" "$BUILD_DIR/*" "node_modules/*"
+  artifacts:
+    paths:
+    - "$ZIP_OUTPUT"
+  rules:
+  - if: "$CI_COMMIT_TAG"
+    when: always
+  - when: never
+
+tag_release:
+  stage: tag
+  image: registry.git.clss.pl/registry/hubprv/alpine-clss-release:latest
+  script:
+    - /usr/local/bin/tag_release.sh
+  rules:
+  - if: $CI_COMMIT_BRANCH == "develop"
+    when: manual
+  - when: never
