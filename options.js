@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     chrome.storage.sync.get({
-        serverUrl: "pwpush.com",
+        serverUrl: "pwpush.clss.pl",
         daysValue: 14,
         viewsValue: 100,
         oneStepValue: false,

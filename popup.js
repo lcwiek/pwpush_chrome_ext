@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const userDeletable = document.getElementById('deletableCheckbox');
     
     chrome.storage.sync.get({
-        serverUrl: "pwpush.com",
+        serverUrl: "pwpush.clss.pl",
         daysValue: 14,
         viewsValue: 100,
         oneStepValue: false,
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         chrome.runtime.sendMessage({ action: 'submitToPWPush', data: data }, (response) => {
             if (response.success) {
-                console.log('PWPush request sent.');
+                console.log('PWPush request sent');
                 textInput.value = '';
             } else {
                 console.error('Error:', response.error);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === "copyToClipboard" && request.url) {
             navigator.clipboard.writeText(request.url).then(() => {
-                console.log('PWPush link copied to clipboard:', request.url);
+                console.log('PWPush link copied to clipboard');
                 message.style.visibility = 'visible';
                 message.style.opacity = '1';
                 setTimeout(() => {

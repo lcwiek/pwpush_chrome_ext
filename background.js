@@ -12,7 +12,7 @@ async function sendToPWPush(data, sendResponse, tab) {
     try {
         const syncSettings = await new Promise((resolve) => {
             chrome.storage.sync.get({
-                serverUrl: "pwpush.pl",
+                serverUrl: "pwpush.clss.pl",
                 daysValue: 14,
                 viewsValue: 100,
                 oneStepValue: false,
@@ -55,14 +55,14 @@ async function sendToPWPush(data, sendResponse, tab) {
 
         const pwpushUrl = `https://${normalizedUrl}/p/${result.url_token}${(data.oneStepValue !== undefined ? data.oneStepValue : syncSettings.oneStepValue) ? "/r" : ""}`;
 
-        console.log("Generated PWPush URL:", pwpushUrl);
+        console.log("Generated PWPush URL");
 
         if (tab) {
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 func: (text) => {
                     navigator.clipboard.writeText(text).then(() => {
-                        console.log('Text copied to clipboard:', text);
+                        console.log('Text copied to clipboard');
                     }).catch(err => {
                         console.error('Failed to copy text to clipboard:', err);
                     });
@@ -109,7 +109,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === 'pwpush_menu' && info.selectionText) {
-        console.log("PWPush menu clicked:", info.selectionText);
+        console.log("PWPush menu clicked");
         sendToPWPush({ payload: info.selectionText }, null, tab);
     }
 });
